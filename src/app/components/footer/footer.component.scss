@@ -1,0 +1,29 @@
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem var(--padding);
+    background-color: #475751;
+    color: white;
+    font-weight: 500;
+
+    .buttons {
+        display: flex;
+        gap: 10px;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .container-footer {
+        flex-direction: column;
+        gap: 10px;
+
+        .cr {
+            text-align: center;
+        }
+    }
+}
