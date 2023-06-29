@@ -29,7 +29,11 @@ export class CoctailDetailComponent implements OnInit {
   getCoctail(name: string) {
     this._coctailService.search(name).subscribe({
       next: (response: any) => {
-        let coctail: any = {}, items = [], color: 1 | 2 | 3 = 1;;
+        let coctail: any = {}, items = [], color: 1 | 2 | 3 = 1;
+
+        if (!response) {
+          this.navigateHome();
+        }
 
         if (response.drinks.length > 1) {
           let search = response.drinks.find((element: any) => element.strDrink == name);
@@ -41,10 +45,6 @@ export class CoctailDetailComponent implements OnInit {
           }
         } else {
           coctail = response.drinks[0];
-        }
-
-        if (!coctail.strDrink) {
-          this.navigateHome();
         }
 
         this.coctail = coctail;
@@ -82,7 +82,6 @@ export class CoctailDetailComponent implements OnInit {
         }
 
         this.coctail.items = items;
-        console.log(this.coctail);
       },
       error: (error: any) => {
         this.navigateHome();

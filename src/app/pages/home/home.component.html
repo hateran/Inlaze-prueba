@@ -37,3 +37,5 @@
 <div *ngFor="let card of cards; let ind = index">
   <app-card [items]="card" [change_style]="ind % 2 != 0 ? true : false"></app-card>
 </div>
+
+<app-pagination></app-pagination>

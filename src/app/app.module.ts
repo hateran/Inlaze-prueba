@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoctailDetailModule } from './pages/coctail-detail/coctail-detail.module';
+import { CoctailsModule } from './pages/coctails/coctails.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CoctailDetailModule } from './pages/coctail-detail/coctail-detail.modul
     AppRoutingModule,
     HomeModule,
     CoctailDetailModule,
+    CoctailsModule,
     HttpClientModule
   ],
   providers: [],

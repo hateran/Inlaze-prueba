@@ -1,0 +1,11 @@
+<div class="coctails-container">
+  <div class="card" *ngFor="let item of coctails">
+    <img [src]="item.strDrinkThumb" alt="">
+    <div class="card__content">
+      <p class="card__title">{{item.strDrink}}</p>
+      <p class="card__description">{{item.strInstructions}}</p>
+    </div>
+  </div>
+</div>
+
+<app-pagination [char]="char" *ngIf="char"></app-pagination>

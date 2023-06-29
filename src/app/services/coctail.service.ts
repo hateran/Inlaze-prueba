@@ -17,4 +17,12 @@ export class CoctailService {
     });
   }
 
+  list(char: string) {
+    let headers = new HttpHeaders();
+
+    return this._httpClient.get(`${environment.apiUrl}/search.php?f=${char}`, {
+      headers: headers
+    });
+  }
+
 }

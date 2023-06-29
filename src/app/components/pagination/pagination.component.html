@@ -1,0 +1,10 @@
+<div class="pagination-container">
+  <hr />
+
+  <span>Browse By Name</span>
+
+  <div class="paginator">
+    <span *ngFor="let item of chars ; let ind = index" (click)="search(item.char)"
+      [ngClass]="item.active ? 'active' : ''">{{item.char | titlecase}}{{ind != chars.length -1 ? ' / ' : ''}}</span>
+  </div>
+</div>
