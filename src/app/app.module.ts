@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CoctailDetailModule } from './pages/coctail-detail/coctail-detail.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    CoctailDetailModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

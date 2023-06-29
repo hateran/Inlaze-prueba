@@ -1,0 +1,11 @@
+<div class="coctail-container" *ngIf="coctail">
+  <div class="left-container">
+    <h2>{{coctail.strDrink}}</h2>
+
+    <div class="picture">
+      <img [src]="coctail.strDrinkThumb" alt="">
+    </div>
+  </div>
+
+  <app-card [items]="coctail.items" [change_style]="true" [custom]="true"></app-card>
+</div>

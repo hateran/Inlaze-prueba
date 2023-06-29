@@ -1,0 +1,36 @@
+.coctail-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+    .left-container {
+        h2 {
+            text-align: center;
+        }
+
+        .picture {
+            width: 350px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                border-radius: 100%;
+                border: 5px solid var(--color_2);
+            }
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .coctail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .coctail-container {
+        gap: 10px;
+    }
+}

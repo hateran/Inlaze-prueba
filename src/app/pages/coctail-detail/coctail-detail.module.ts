@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
-import { CardComponent } from 'src/app/components/card/card.component';
+import { CoctailDetailComponent } from './coctail-detail.component';
 import { CardModule } from 'src/app/components/card/card.module';
 
 @NgModule({
@@ -9,7 +8,7 @@ import { CardModule } from 'src/app/components/card/card.module';
     CommonModule,
     CardModule
   ],
-  declarations: [HomeComponent],
-  exports: [HomeComponent]
+  declarations: [CoctailDetailComponent],
+  exports: [CoctailDetailComponent]
 })
-export class HomeModule { }
+export class CoctailDetailModule { }

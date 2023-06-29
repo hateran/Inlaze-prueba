@@ -1,28 +1,30 @@
-<div class="card-container" *ngIf="!change_style">
-  <div class="card-item" *ngFor="let item of items">
+<div class="card-container" [ngClass]="custom ? 'custom' : ''" *ngIf="!change_style">
+  <div class="card-item" *ngFor="let item of items" (click)="navigateToDetails(item.title)">
     <div class="card-img" *ngIf="item.title_float">
       <div class="card-imgs pv">
         {{item.title_float}}
       </div>
     </div>
 
-    <img class="picture" [ngClass]="'color-' + item.color" [src]="item.picture" alt="">
+    <img class="picture" [ngClass]="'color-' + item.color" [src]="item.picture" alt="" *ngIf="item.picture">
+    <div class="picture circle" [ngClass]="'color-' + item.color" *ngIf="!item.picture"></div>
     <span class="title">{{item.title}}</span>
-    <span class="subtitle">Add to my list <span class="plus">+</span></span>
+    <span class="subtitle" *ngIf="item.picture">Add to my list <span class="plus">+</span></span>
   </div>
 </div>
 
-<div class="card-container second" *ngIf="change_style">
-  <div class="card-item" *ngFor="let item of items">
+<div class="card-container second" [ngClass]="custom ? 'custom' : ''" *ngIf="change_style">
+  <div class="card-item" *ngFor="let item of items" (click)="navigateToDetails(item.title)">
     <div class="card-img" *ngIf="item.title_float">
       <div class="card-imgs pv">
         {{item.title_float}}
       </div>
     </div>
 
-    <img class="picture" [ngClass]="'color-' + item.color" [src]="item.picture" alt="">
+    <img class="picture" [ngClass]="'color-' + item.color" [src]="item.picture" alt="" *ngIf="item.picture">
+    <div class="picture circle" [ngClass]="'color-' + item.color" *ngIf="!item.picture"></div>
     <span class="title">{{item.title}}</span>
-    <div class="second-container">
+    <div class="second-container" *ngIf="item.picture">
       <span class="subtitle">Recipes with {{item.title}} </span>
       <i class="bi bi-chevron-compact-right"></i>
     </div>
