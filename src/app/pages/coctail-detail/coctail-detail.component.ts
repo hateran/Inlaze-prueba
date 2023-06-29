@@ -65,7 +65,8 @@ export class CoctailDetailComponent implements OnInit {
             let entry: any = {
               title: title,
               picture: "",
-              color: color
+              color: color,
+              ingredient: this.coctail[key]
             };
 
             if (index == '1') {
@@ -73,7 +74,8 @@ export class CoctailDetailComponent implements OnInit {
                 title_float: "Ingredients",
                 title: title,
                 picture: "",
-                color: color
+                color: color,
+                ingredient: this.coctail[key]
               }
             }
 

@@ -10,6 +10,7 @@ import { CoctailService } from 'src/app/services/coctail.service';
 export class CoctailsComponent implements OnInit {
   coctails: any[] = [];
   char: string | null = 'a';
+  ingredient: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,9 +20,14 @@ export class CoctailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.char = this.route.snapshot.paramMap.get('char');
+    this.ingredient = this.route.snapshot.paramMap.get('ingredient');
 
     if (!this.char) {
-      this.navigateHome();
+      if (!this.ingredient) {
+        this.navigateHome();
+      } else {
+        this.listByIngredient(this.ingredient);
+      }
     } else {
       this.listCoctails(this.char);
     }
@@ -40,6 +46,25 @@ export class CoctailsComponent implements OnInit {
         this.navigateHome();
       }
     });
+  }
+
+  listByIngredient(ingredient: string) {
+    this._coctailService.searchByIngredient(ingredient).subscribe({
+      next: (response: any) => {
+        if (response) {
+          this.coctails = response.drinks;
+        } else {
+          this.navigateHome();
+        }
+      },
+      error: (error: any) => {
+        this.navigateHome();
+      }
+    });
+  }
+
+  navigateToCoctail(name: string) {
+    this._router.navigate([`coctail-detail/${name.toLowerCase()}`]);
   }
 
   navigateHome() {

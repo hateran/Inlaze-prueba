@@ -20,4 +20,8 @@ export class CardComponent implements OnInit {
     this._router.navigate([`coctail-detail/${name.toLowerCase()}`]);
   }
 
+  navigateToCoctails(name: string){
+    this._router.navigate([`coctails/ingredient/${name.toLowerCase()}`]);
+  }
+
 }

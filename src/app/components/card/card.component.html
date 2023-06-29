@@ -1,5 +1,6 @@
 <div class="card-container" [ngClass]="custom ? 'custom' : ''" *ngIf="!change_style">
-  <div class="card-item" *ngFor="let item of items" (click)="navigateToDetails(item.title)">
+  <div class="card-item" *ngFor="let item of items"
+    (click)="item.picture ? navigateToDetails(item.title) : navigateToCoctails(item.ingredient)">
     <div class="card-img" *ngIf="item.title_float">
       <div class="card-imgs pv">
         {{item.title_float}}
@@ -14,7 +15,8 @@
 </div>
 
 <div class="card-container second" [ngClass]="custom ? 'custom' : ''" *ngIf="change_style">
-  <div class="card-item" *ngFor="let item of items" (click)="navigateToDetails(item.title)">
+  <div class="card-item" *ngFor="let item of items"
+    (click)="item.picture ? navigateToDetails(item.title) : navigateToCoctails(item.ingredient)">
     <div class="card-img" *ngIf="item.title_float">
       <div class="card-imgs pv">
         {{item.title_float}}

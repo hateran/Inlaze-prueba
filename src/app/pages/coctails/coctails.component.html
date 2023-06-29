@@ -1,5 +1,5 @@
 <div class="coctails-container">
-  <div class="card" *ngFor="let item of coctails">
+  <div class="card" *ngFor="let item of coctails" (click)="navigateToCoctail(item.strDrink)">
     <img [src]="item.strDrinkThumb" alt="">
     <div class="card__content">
       <p class="card__title">{{item.strDrink}}</p>
@@ -8,4 +8,4 @@
   </div>
 </div>
 
-<app-pagination [char]="char" *ngIf="char"></app-pagination>
+<app-pagination [char]="char ? char : 'a'"></app-pagination>

@@ -14,6 +14,10 @@ const routes: Routes = [
     component: CoctailDetailComponent
   },
   {
+    path: 'coctails/ingredient/:ingredient',
+    component: CoctailsComponent
+  },
+  {
     path: 'coctails/:char',
     component: CoctailsComponent
   },

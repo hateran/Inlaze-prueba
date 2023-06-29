@@ -17,6 +17,14 @@ export class CoctailService {
     });
   }
 
+  searchByIngredient(ingredient: string) {
+    let headers = new HttpHeaders();
+
+    return this._httpClient.get(`${environment.apiUrl}/filter.php?i=${ingredient}`, {
+      headers: headers
+    });
+  }
+
   list(char: string) {
     let headers = new HttpHeaders();
 
