@@ -1,0 +1,127 @@
+.card-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #475751;
+    gap: 125px;
+    margin: 10rem;
+    padding: 3rem;
+    padding-top: 6rem;
+    border-radius: 50px;
+
+    .card-img,
+    .card-img div {
+        width: 100%;
+    }
+
+    .card-img {
+        position: absolute;
+        top: -45px;
+        left: 0;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-img a,
+    .card-img div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        font-weight: bold;
+        color: #574747;
+        height: 100px;
+        width: 85%;
+        background-color: var(--color_2);
+        border-radius: 8px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .pv:hover {
+        transform: scale(1.12);
+    }
+
+    .card-imgs {
+        transition: all 0.5s;
+    }
+
+    .card-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 150px;
+
+        .title-float {
+            position: absolute;
+        }
+
+        .picture {
+            border-radius: 100%;
+
+            &.color-1 {
+                border: 5px solid #DFBED8;
+            }
+
+            &.color-2 {
+                border: 5px solid #C5DBA1;
+            }
+
+            &.color-3 {
+                border: 5px solid #DBB6A1;
+            }
+        }
+
+        .title,
+        .subtitle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .title {
+            color: white;
+        }
+
+        .subtitle {
+            color: #A1A9A6;
+
+            .plus {
+                color: white;
+            }
+        }
+    }
+
+    &.second {
+        background-color: #574747;
+
+        .card-img div {
+            color: white;
+            background-color: var(--color_1);
+        }
+
+        .card-item {
+            .picture {
+                &.color-1 {
+                    background-color: #DFBED8;
+                }
+
+                &.color-2 {
+                    background-color: #C5DBA1;
+                }
+
+                &.color-3 {
+                    background-color: #DBB6A1;
+                }
+            }
+
+            .second-container {
+                text-align: center;
+
+                i {
+                    color: white;
+                }
+            }
+        }
+    }
+}

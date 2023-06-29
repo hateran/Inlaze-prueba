@@ -21,7 +21,7 @@
   <div class="bg"></div>
 
   <div class="rigth-container">
-    <div class="card" *ngFor="let card of cards">
+    <div class="card" *ngFor="let card of content">
       <div class="logo">
         <img [src]="card.picture" alt="">
       </div>
@@ -32,4 +32,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div *ngFor="let card of cards; let ind = index">
+  <app-card [items]="card" [change_style]="ind % 2 != 0 ? true : false"></app-card>
 </div>

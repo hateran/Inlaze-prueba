@@ -1,0 +1,30 @@
+<div class="card-container" *ngIf="!change_style">
+  <div class="card-item" *ngFor="let item of items">
+    <div class="card-img" *ngIf="item.title_float">
+      <div class="card-imgs pv">
+        {{item.title_float}}
+      </div>
+    </div>
+
+    <img class="picture" [ngClass]="'color-' + item.color" [src]="item.picture" alt="">
+    <span class="title">{{item.title}}</span>
+    <span class="subtitle">Add to my list <span class="plus">+</span></span>
+  </div>
+</div>
+
+<div class="card-container second" *ngIf="change_style">
+  <div class="card-item" *ngFor="let item of items">
+    <div class="card-img" *ngIf="item.title_float">
+      <div class="card-imgs pv">
+        {{item.title_float}}
+      </div>
+    </div>
+
+    <img class="picture" [ngClass]="'color-' + item.color" [src]="item.picture" alt="">
+    <span class="title">{{item.title}}</span>
+    <div class="second-container">
+      <span class="subtitle">Recipes with {{item.title}} </span>
+      <i class="bi bi-chevron-compact-right"></i>
+    </div>
+  </div>
+</div>
